@@ -46,11 +46,15 @@ GEM
 
 PLATFORMS
   ruby
+  unknown
 
 DEPENDENCIES
   json
   net-http-persistent (~> 4.0.1, >= 4.0.0)
   telegram-bot-ruby
+
+RUBY VERSION
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.1.4
