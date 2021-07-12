@@ -1,0 +1,157 @@
+{
+  "medicine": {
+    "title": "МЕДИЦИНА",
+    "options": [
+      {
+        "text": "\"Разум в огне\"",
+        "url": "https://rezka.ag/films/drama/24958-razum-v-ogne-2016.html"
+      },
+      {
+        "text": "\"Тэмпл Грандин\"",
+        "url": "https://rezka.ag/films/drama/1364-templ-grandin-2010.html"
+      },
+      {
+        "text": "\"Сотворившая чудо\"",
+        "url": "https://rezka.ag/films/drama/12734-sotvorivshaya-chudo-1962.html"
+      },
+      {
+        "text": "\"Золотые руки\"",
+        "url": "https://rezka.ag/films/drama/15975-zolotye-ruki-2009.html"
+      },
+      {
+        "text": "\"Не/смотря ни на что\"",
+        "url": "https://rezka.ag/films/comedy/23479-ne-2017.html"
+      },
+      {
+        "text": "\"Король говорит!\"",
+        "url": "https://rezka.ag/films/drama/957-korol-govorit-2010.html"
+      },
+      {
+        "text": "\"Звездочки на земле\"",
+        "url": "https://rezka.ag/films/drama/1032-zvezdochki-na-zemle-2007.html"
+      }
+    ]
+  },
+
+  "relationship": {
+    "title": "ВЗАИМООТНОШЕНИЯ",
+    "options": [
+      {
+        "text": "\"Того\"",
+        "url": "https://rezka.ag/films/drama/32844-togo-2019.html"
+      },
+      {
+        "text": "\"Большие глаза\"",
+        "url": "https://rezka.ag/films/drama/7680-bolshie-glaza-2014.html"
+      },
+      {
+        "text": "\"1+1\"",
+        "url": "https://rezka.ag/films/drama/289-11-2011.html"
+      },
+      {
+        "text": "\"Лучшие враги\"",
+        "url": "https://rezka.ag/films/drama/30790-luchshie-vragi-2019.html"
+      },
+      {
+        "text": "\"Игры разумов\"",
+        "url": "https://rezka.ag/films/drama/30570-igry-razumov-2019.html"
+      }
+    ]
+  },
+
+  "sport": {
+    "title": "СПОРТ",
+    "options": [
+      {
+        "text": "\"Шахматист\"",
+        "url": "https://rezka.ag/films/drama/33269-shahmatist-2019.html"
+      },
+      {
+        "text": "\"В погоне за ветром\"",
+        "url": "https://rezka.ag/films/drama/32431-v-pogone-za-vetrom-2019.html"
+      },
+      {
+        "text": "\"Голкипер\"",
+        "url": "https://rezka.ag/films/drama/31978-golkiper-2018.html"
+      },
+      {
+        "text": "\"Невидимая сторона\"",
+        "url": "https://rezka.ag/films/drama/793-nevidimaya-storona-2009.html"
+      }
+    ]
+  },
+
+  "willpower": {
+    "title": "СИЛЬНЫЕ ДУХОМ",
+    "options": [
+      {
+        "text": "\"Проповедник с пулеметом\"",
+        "url": "https://rezka.ag/films/action/375-propovednik-s-pulemetom-2011.html"
+      },
+      {
+        "text": "\"В погоне за счастьем\"",
+        "url": "https://rezka.ag/films/biographical/826-v-pogone-za-schastem-2006.html"
+      }
+    ]
+  },
+
+  "justice": {
+    "title": "ПРАВОСУДИЕ",
+    "options": [
+      {
+        "text": "\"Невиновный\"",
+        "url": "https://rezka.ag/films/drama/289-11-2011.html"
+      }
+    ]
+  },
+
+  "psychology": {
+    "title": "ПСИХОЛОГИЯ,ФИЛОСОФИЯ",
+    "options": [
+      {
+        "text": "\"Сибил\"",
+        "url": "https://rezka.ag/films/drama/35810-sibil-1976.html"
+      },
+      {
+        "text": "\"Опасный метод\"",
+        "url": "https://rezka.ag/films/thriller/507-opasnyy-metod-2011.html"
+      },
+      {
+        "text": "\"Игры разума\"",
+        "url": "https://rezka.ag/films/drama/812-igry-razuma-2001.html"
+      },
+      {
+        "text": "\"Пианист\"",
+        "url": "https://rezka.ag/films/drama/799-pianist-2002.html"
+      }
+    ]
+  },
+
+  "war": {
+    "title": "ВОЙНА",
+    "options": [
+      {
+        "text": "\"Лётчица Гунджан Саксена\"",
+        "url": "https://rezka.ag/films/drama/35365-letchica-gundzhan-saksena-2020.html"
+      },
+      {
+        "text": "\"Айла: Дочь войны\"",
+        "url": "https://rezka.ag/films/drama/32403-ayla-doch-voyny-2017.html"
+      }
+    ]
+  },
+
+  "science": {
+    "title": "НАУКА",
+    "options": [
+      {
+        "text": "\"1+1\"",
+        "url": "https://rezka.ag/films/drama/289-11-2011.html"
+      },
+      {
+        "text": "\"Король говорит!\"",
+        "url": "https://rezka.ag/films/drama/957-korol-govorit-2010.html"
+      }
+    ]
+  }
+}
