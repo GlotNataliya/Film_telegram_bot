@@ -1,16 +1,11 @@
 require "telegram/bot"
 require "json"
 
-puts "1" *100
-puts(ENV['API_KEY'])
-puts "1" *100
-
-
 class MyBot
   def initialize
     file = File.read("lib/choose.json")
     choose = JSON.parse(file)
-    Telegram::Bot::Client.run(ENV['API_KEY']) do |bot|
+    Telegram::Bot::Client.run(ENV["API_KEY"]) do |bot|
       bot.listen do |message|
         case message
         when Telegram::Bot::Types::CallbackQuery
