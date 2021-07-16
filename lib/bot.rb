@@ -1,6 +1,11 @@
 require "telegram/bot"
 require "json"
 
+puts "1" *100
+puts(ENV['API_KEY'])
+puts "1" *100
+
+
 class MyBot
   def initialize
     file = File.read("lib/choose.json")
