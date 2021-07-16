@@ -1,12 +1,11 @@
 require "telegram/bot"
-require_relative "token_key.rb"
 require "json"
 
 class MyBot
   def initialize
     file = File.read("lib/choose.json")
     choose = JSON.parse(file)
-    Telegram::Bot::Client.run(TelegramTokenKey::API_KEY) do |bot|
+    Telegram::Bot::Client.run(ENV['API_KEY']) do |bot|
       bot.listen do |message|
         case message
         when Telegram::Bot::Types::CallbackQuery
