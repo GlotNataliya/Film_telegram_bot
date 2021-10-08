@@ -30,12 +30,16 @@ class MyBot
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "ПСИХОЛОГИЯ,ФИЛОСОФИЯ", callback_data: "psychology"),
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "ВОЙНА", callback_data: "war"),
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "НАУКА", callback_data: "science"),
+              Telegram::Bot::Types::InlineKeyboardButton.new(text: "ДЛЯ ДУШИ(не на реальных событиях)", callback_data: "for_the_soul"),
             ]
             answers = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
             bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
           when "/stop"
             kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
-            bot.api.send_message(chat_id: message.chat.id, text: "Жаль, что ты уходишь \u{1F622}. \n Мне казалось нам было весело вместе... \n Надеюсь, ты скоро вернёшься. И я увижу тебя снова \u{1F618} . \n Пока \u{1F60A}", reply_markup: kb)
+            bot.api.send_message(chat_id: message.chat.id, text: "Жаль, что ты уходишь \u{1F622}. \nМне казалось, нам было весело вместе... \nНадеюсь, ты скоро вернёшься, и я увижу тебя снова \u{1F618} . \nПока \u{1F60A}", reply_markup: kb)
+          when "/write_me"
+            kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
+            bot.api.send_message(chat_id: message.chat.id, text: "Ты знаешь интересный фильм и хочешь с ним поделиться? \nИли у тебя есть другие идеи? \nНапиши мне: an.chishevich@yandex.ru \u{1F60A}", reply_markup: kb)
           end
         end
       end
