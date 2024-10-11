@@ -1,27 +1,36 @@
-require "telegram/bot"
+require 'telegram/bot'
+require 'dotenv/load'
 require "json"
+require 'pry'
 
 class MyBot
   def initialize
+    @token = ENV["API_KEY"]
+  end
+
+  def run_telegram_bot
     file = File.read("lib/choose.json")
-    choose = JSON.parse(file)
-    Telegram::Bot::Client.run(ENV["API_KEY"]) do |bot|
+    parsed_file = JSON.parse(file)
+
+    Telegram::Bot::Client.run(@token) do |bot|
       bot.listen do |message|
         case message
         when Telegram::Bot::Types::CallbackQuery
-          title = choose[message.data]["title"]
-          value = choose[message.data]["options"]
-          res = value.map do |hash|
-            Telegram::Bot::Types::InlineKeyboardButton.new(text: hash["text"], url: hash["url"])
+          title = parsed_file[message.data]["title"]
+          values = parsed_file[message.data]["options"]
+
+          res = values.map do |value|
+            Telegram::Bot::Types::InlineKeyboardButton.new(text: value["text"], url: value["url"])
           end
-          markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: res)
+
+          markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: [res].flatten.map(&method(:Array)))
 
           bot.api.send_message(chat_id: message.from.id, text: "Тема #{title}. Отличный выбор \u{1F44D}", reply_markup: markup)
         when Telegram::Bot::Types::Message
           case message.text
           when "/start"
             question = "Привет, #{message.from.first_name} \u{1F91D}! \n На какую тему ты хочешь посмотреть фильм? \n Выбирай ниже \u{1F447}"
-            kb = [
+            themes = [[
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "МЕДИЦИНА", callback_data: "medicine"),
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "ВЗАИМООТНОШЕНИЯ", callback_data: "relationship"),
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "СПОРТ", callback_data: "sport"),
@@ -31,9 +40,10 @@ class MyBot
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "ВОЙНА", callback_data: "war"),
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "НАУКА", callback_data: "science"),
               Telegram::Bot::Types::InlineKeyboardButton.new(text: "ДЛЯ ДУШИ(не на реальных событиях)", callback_data: "for_the_soul"),
-            ]
-            answers = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
-            bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
+            ]].flatten.map(&method(:Array))
+
+            markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: themes)
+            bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: markup)
           when "/stop"
             kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
             bot.api.send_message(chat_id: message.chat.id, text: "Жаль, что ты уходишь \u{1F622}. \nМне казалось, нам было весело вместе... \nНадеюсь, ты скоро вернёшься, и я увижу тебя снова \u{1F618} . \nПока \u{1F60A}", reply_markup: kb)

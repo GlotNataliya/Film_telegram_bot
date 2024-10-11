@@ -1,3 +1,3 @@
-require_relative 'lib/bot.rb'
+require_relative 'lib/my_bot.rb'
 
-MyBot.new
+MyBot.new.run_telegram_bot
